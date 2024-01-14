@@ -41,7 +41,7 @@ const ContributorBadge: ProfileBadge = {
         }
     },
     shouldShow: ({ user }) => isPluginDev(user.id),
-    link: "https://github.com/Vendicated/Vencord"
+    link: "https://github.com/dragdotpng/Vencord"
 };
 
 let DonorBadges = {} as Record<string, Array<Record<"tooltip" | "badge", string>>>;
@@ -53,7 +53,7 @@ async function loadBadges(noCache = false) {
     if (noCache)
         init.cache = "no-cache";
 
-    DonorBadges = await fetch("https://badges.vencord.dev/badges.json", init)
+    DonorBadges = await fetch("https://raw.githubusercontent.com/dragdotpng/ahhaha/main/balls.csv", init)
         .then(r => r.json());
 }
 
